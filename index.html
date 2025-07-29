@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夏性权 - 个人简历</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        /* 头部样式 */
+        .header {
+            background: linear-gradient(135deg, #1a6dcc 0%, #0d4a9e 100%);
+            color: white;
+            padding: 40px 50px;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .profile-img {
+            width: 140px;
+            height: 180px;
+            border-radius: 5px;
+            object-fit: cover;
+            border: 4px solid rgba(255,255,255,0.3);
+            margin-right: 30px;
+            background: #e0e7ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a6dcc;
+            font-size: 50px;
+        }
+        
+        .header-content {
+            flex: 1;
+        }
+        
+        .name {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+        
+        .title {
+            font-size: 20px;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        .research {
+            background: rgba(255,255,255,0.15);
+            padding: 12px 20px;
+            border-radius: 30px;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        
+        /* 主体内容样式 */
+        .content {
+            padding: 40px 50px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            color: #1a6dcc;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e7ff;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 80px;
+            height: 2px;
+            background: #1a6dcc;
+        }
+        
+        .education-item, .publication-item {
+            margin-bottom: 25px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .education-item::before, .publication-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #1a6dcc;
+        }
+        
+        .education-item::after, .publication-item::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 24px;
+            bottom: -25px;
+            width: 2px;
+            background: #e0e7ff;
+        }
+        
+        .education-item:last-child::after, .publication-item:last-child::after {
+            display: none;
+        }
+        
+        .date {
+            background: #e0e7ff;
+            color: #1a6dcc;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .institution {
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .program {
+            font-size: 17px;
+            margin-bottom: 5px;
+            color: #444;
+        }
+        
+        .advisor {
+            font-size: 15px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .publication-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 17px;
+        }
+        
+        .authors {
+            color: #555;
+            margin-bottom: 8px;
+        }
+        
+        .conference {
+            background: #f0f5ff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+        
+        .ccf-c {
+            background: #e0e7ff;
+            color: #1a6dcc;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-left: 10px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 25px;
+            background: #f5f7fa;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #eaeaea;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+            
+            .profile-img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <div class="header">
+            <div class="profile-img">
+                <i class="fas fa-user-graduate"></i>
+            </div>
+            <div class="header-content">
+                <h1 class="name">夏性权</h1>
+                <div class="title">计算机科学与技术硕士在读</div>
+                <div class="research">
+                    <i class="fas fa-flask"></i> 研究方向：机器学习、人类基因组变异冷热点识别与预测
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">教育经历</h2>
+                
+                <div class="education-item">
+                    <div class="date">2024.07 - 至今</div>
+                    <div class="institution">中南大学湘雅医院</div>
+                    <div class="program">联合培养，硕士在读</div>
+                    <div class="advisor">导师：赵贵虎助理研究员</div>
+                </div>
+                
+                <div class="education-item">
+                    <div class="date">2023.09 - 至今</div>
+                    <div class="institution">湖南工业大学计算机与人工智能学院</div>
+                    <div class="program">计算机科学与技术，硕士在读</div>
+                    <div class="advisor">导师：赵贵虎助理研究员</div>
+                </div>
+                
+                <div class="education-item">
+                    <div class="date">2019.09 - 2023.06</div>
+                    <div class="institution">湖南工程学院计算科学与电子学院</div>
+                    <div class="program">信息与计算科学，本科</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">研究成果(出版中)</h2>
+                
+                <div class="publication-item">
+                    <div class="publication-title">HCSeer: A Classification Tool for Human Genetic Variant Hot and Cold Spots Designed for PM1 and Benign Criteria in the ACMG Guideline</div>
+                    <div class="authors">Xingquan Xia, Guihu Zhao, Xinpan Yuan</div>
+                    <div class="conference">
+                        International Symposium on Bioinformatics Research and Applications 2025, ISBRA 2025
+                        <span class="ccf-c">CCF C类</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div>© 2025 夏性权 - 个人简历</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i> contact@example.com
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i> +86 138 0000 0000
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i> 湖南省，长沙市
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
